@@ -31,48 +31,6 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="index_files/navigation-1.1/tabsets.js"></script>
-<script src="index_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="index_files/proj4js-2.3.15/proj4.js"></script>
-<link href="index_files/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
-<script src="index_files/highcharts-9.3.1/highcharts.js"></script>
-<script src="index_files/highcharts-9.3.1/highcharts-3d.js"></script>
-<script src="index_files/highcharts-9.3.1/highcharts-more.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/stock.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/map.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/data.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/exporting.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/offline-exporting.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/drilldown.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/item-series.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/annotations.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/export-data.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/funnel.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/heatmap.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/treemap.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/sankey.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/dependency-wheel.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/organization.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/solid-gauge.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/streamgraph.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/sunburst.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/vector.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/wordcloud.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/xrange.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/tilemap.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/venn.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/gantt.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/timeline.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/bullet.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/coloraxis.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/dumbbell.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/lollipop.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/series-label.js"></script>
-<script src="index_files/highcharts-9.3.1/plugins/motion.js"></script>
-<script src="index_files/highcharts-9.3.1/custom/reset.js"></script>
-<script src="index_files/highcharts-9.3.1/modules/boost.js"></script>
-<script src="index_files/highchart-binding-0.9.3.9000/highchart.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -296,165 +254,32 @@ pre code {
 </div>
 
 
-<!-- # Content  -->
-<!-- 1. Brief Introduction -->
-<!-- 2. Data Sources -->
-<!-- 3. Technologies Used -->
-<!-- 4. Data Transformation -->
-<!--     + Main Libraries -->
-<!--     + Graduate Employment Dataset -->
-<!--     + Visualizations Part 1 -->
-<!--     + Graduates by institutions -->
-<!--     + Visualizations Part 2 -->
-<!-- 5. Shiny Application -->
-<!-- 6. Deployment -->
-<!-- 7. References -->
-<p><br />
-</p>
-<div id="introducción" class="section level2">
-<h2>1. Introducción</h2>
-<blockquote>
-<p>Sarah A., nueva integrante del equipo de <strong>Cell2Cell</strong>,
-con estudios en estadística, tiene como misión elaborar un modelo
-estadístico para predecir la rotación de clientes, utilizar el modelo
-para identificar los generadores más importantes de rotación y con estos
-nuevos conocimientos recomendar un programa de gestión de clientes al
-Grupo de Gestión de Base de Clientes.</p>
-</blockquote>
-<!-- ##### **How to see information on the website:** -->
-<!-- <img src="www/howto.gif" width="100%"/> -->
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting
+syntax for authoring HTML, PDF, and MS Word documents. For more details
+on using R Markdown see <a href="http://rmarkdown.rstudio.com"
+class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be
+generated that includes both content as well as the output of any
+embedded R code chunks within the document. You can embed an R code
+chunk like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
 </div>
-<div id="variables-en-estudio" class="section level2">
-<h2>2. Variables en estudio</h2>
-<p>De la base de datos, se tiene la siguientes variables bajo
-estudio:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>Data1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Cell2CellBase.csv&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">summary</span>(Data1)</span></code></pre></div>
-<pre><code>##  AccountLength   PhoneNumber          IntlPlan          VMailPlan        
-##  Min.   :  1.0   Length:3333        Length:3333        Length:3333       
-##  1st Qu.: 74.0   Class :character   Class :character   Class :character  
-##  Median :101.0   Mode  :character   Mode  :character   Mode  :character  
-##  Mean   :101.1                                                           
-##  3rd Qu.:127.0                                                           
-##  Max.   :243.0                                                           
-##   VMailMessage       DayMins         DayCalls       DayCharge    
-##  Min.   : 0.000   Min.   :  0.0   Min.   :  0.0   Min.   : 0.00  
-##  1st Qu.: 0.000   1st Qu.:143.7   1st Qu.: 87.0   1st Qu.:24.43  
-##  Median : 0.000   Median :179.4   Median :101.0   Median :30.50  
-##  Mean   : 8.099   Mean   :179.8   Mean   :100.4   Mean   :30.56  
-##  3rd Qu.:20.000   3rd Qu.:216.4   3rd Qu.:114.0   3rd Qu.:36.79  
-##  Max.   :51.000   Max.   :350.8   Max.   :165.0   Max.   :59.64  
-##     EveMins         EveCalls       EveCharge       NightMins    
-##  Min.   :  0.0   Min.   :  0.0   Min.   : 0.00   Min.   : 23.2  
-##  1st Qu.:166.6   1st Qu.: 87.0   1st Qu.:14.16   1st Qu.:167.0  
-##  Median :201.4   Median :100.0   Median :17.12   Median :201.2  
-##  Mean   :201.0   Mean   :100.1   Mean   :17.08   Mean   :200.9  
-##  3rd Qu.:235.3   3rd Qu.:114.0   3rd Qu.:20.00   3rd Qu.:235.3  
-##  Max.   :363.7   Max.   :170.0   Max.   :30.91   Max.   :395.0  
-##    NightCalls     NightCharge        IntlMins       IntlCalls     
-##  Min.   : 33.0   Min.   : 1.040   Min.   : 0.00   Min.   : 0.000  
-##  1st Qu.: 87.0   1st Qu.: 7.520   1st Qu.: 8.50   1st Qu.: 3.000  
-##  Median :100.0   Median : 9.050   Median :10.30   Median : 4.000  
-##  Mean   :100.1   Mean   : 9.039   Mean   :10.24   Mean   : 4.479  
-##  3rd Qu.:113.0   3rd Qu.:10.590   3rd Qu.:12.10   3rd Qu.: 6.000  
-##  Max.   :175.0   Max.   :17.770   Max.   :20.00   Max.   :20.000  
-##    IntlCharge    CustServ.Calls    Churn        
-##  Min.   :0.000   Min.   :0.000   Mode :logical  
-##  1st Qu.:2.300   1st Qu.:1.000   FALSE:2850     
-##  Median :2.780   Median :1.000   TRUE :483      
-##  Mean   :2.765   Mean   :1.563                  
-##  3rd Qu.:3.270   3rd Qu.:2.000                  
-##  Max.   :5.400   Max.   :9.000</code></pre>
-</div>
-<div id="preguntas" class="section level2">
-<h2>3. Preguntas</h2>
-<div id="pregunta-1" class="section level3">
-<h3>Pregunta 1</h3>
-<blockquote>
-<p>¿Cuál es la problemática que enfrenta la compañia
-<strong>Cell2Cell</strong>?</p>
-</blockquote>
-<ul>
-<li>La problemática a la que se enfrenta es la <strong>Rotación
-voluntaria</strong> de clientes, es decir, aquella deserción de clientes
-de la empresa realizada por alguna buena razón.<br />
-<br />
-</li>
-</ul>
-<p>Deacuerdo a la base de datos, tenemos que:<br />
-</p>
-<p>De un total de 3’333 clientes registrados en la base de datos, 14%
-(483) han desertado, mientras que el 88% (2’850) continúa utilizando el
-servicio.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(highcharter)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;Cell2CellBase.csv&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Resultado =</span> <span class="fu">case_when</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    Churn <span class="sc">==</span> <span class="cn">FALSE</span> <span class="sc">~</span> <span class="st">&quot;Se mantiene&quot;</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Desertó&quot;</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="fu">group_by</span>(Resultado) <span class="sc">%&gt;%</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Porcentaje =</span> <span class="fu">round</span>(Total<span class="sc">/</span><span class="fu">sum</span>(Total)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Etiqueta =</span> <span class="fu">paste0</span>(Resultado, <span class="st">&quot; (&quot;</span>, Porcentaje, <span class="st">&quot;%)&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="fu">hchart</span>(., <span class="st">&#39;pie&#39;</span>, <span class="fu">hcaes</span>(<span class="at">x =</span> Etiqueta, <span class="at">y =</span> Total), <span class="at">name =</span> <span class="st">&quot;Total&quot;</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>         <span class="at">tooltip =</span> <span class="fu">list</span>(<span class="at">valueDecimals =</span> <span class="dv">0</span>, <span class="at">valuePrefix =</span> <span class="st">&quot;&quot;</span>, <span class="at">valueSuffix =</span> <span class="st">&quot; Casos&quot;</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="st">&quot;Total de Casos según Estado del Cliente&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  <span class="fu">hc_colors</span>(<span class="fu">c</span>(<span class="st">&quot;#1f3729&quot;</span>, <span class="st">&quot;#149c44&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="fu">hc_credits</span>(</span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>    <span class="at">enabled =</span> <span class="cn">TRUE</span>, <span class="at">text =</span> <span class="st">&quot;Fuente: Cell2Cell&quot;</span>,</span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="at">fontSize =</span> <span class="st">&quot;10px&quot;</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>  )</span></code></pre></div>
-<div id="htmlwidget-1162314a80950e4ffbd4" style="width:672px;height:480px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1162314a80950e4ffbd4">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"Total de Casos según Estado del Cliente"},"yAxis":{"title":{"text":"Total"},"type":"linear"},"credits":{"enabled":true,"text":"Fuente: Cell2Cell","style":{"fontSize":"10px"}},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"Resultado":"Desertó","Total":483,"Porcentaje":14,"Etiqueta":"Desertó (14%)","y":483,"name":"Desertó (14%)"},{"Resultado":"Se mantiene","Total":2850,"Porcentaje":86,"Etiqueta":"Se mantiene (86%)","y":2850,"name":"Se mantiene (86%)"}],"type":"pie","name":"Total","tooltip":{"valueDecimals":0,"valuePrefix":"","valueSuffix":" Casos"}}],"xAxis":{"type":"category","title":{"text":"Etiqueta"},"categories":null},"colors":["#1f3729","#149c44"]},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="pregunta-2" class="section level3">
-<h3>Pregunta 2</h3>
-<blockquote>
-<p>¿Cuál es la manera actual de lidiar con ese problema? ¿Qué ventajas
-tiene en el corto plazo? ¿Qué desventajas tiene en el largo plazo?</p>
-</blockquote>
-<ul>
-<li>Existen diversas alternativas para abordar esta problemática, entre
-ellas los <strong>Programas de Retención Reactiva</strong> o
-<strong>Preventiva</strong>. Así como la elaboración de <strong>modelos
-predictivos</strong> para la asignación adecuada de los servicios a
-ciertos clientes en base a determinadas características, en razón de
-reducir el riesgo de deserción de antemano.<br />
-Si bien es cierto, el Programa de Retención Reactiva, a corto plazo,
-resultado ser muy útil dado que el cliente continua utilizando el
-servicio, pero a largo plazo ya no, pues el cliente lo ve como una
-especie de último recurso por parte de la empresa y puede empezar a
-realziarlo frecuentemente y dejar de lado los términos iniciales del
-servicio brindado. Con respecto, al modelo predictivo, tiene ventaja en
-el corto plazo, debido a que de ante mano puedes conocer la capacidad de
-cumplir con el servicio. Quizas la desventaja a largo plazo del modelo
-prodectivo sea la adquisición de las personas encargada del modelo, así
-como la constante evaluación y mejora que el modelo requiere.<br />
-Pero tomando todo lo anterior mencionado en consideración, lo mejor
-sería optar por el modelo predictivo.<br />
-<br />
-</li>
-</ul>
-</div>
-<div id="pregunta-3" class="section level3 tabset">
-<h3 class="tabset">Pregunta 3</h3>
-<blockquote>
-<p>Usted es el personaje Sara, ¿Cuál sería su plan de acción para
-afrontar el problema?</p>
-</blockquote>
-<p>De acuerdo al análisis descriptivo y predictivo realizado
-anteriormente, se concluye que tal vez pueda dar beneficios a aquellos
-clientes que tienen de 3 a 5 años de uso del servicio, dado que es donde
-hay mayor cantidad de fuga de clientes, además de tal vez premiar la
-fidelidad a la compañía con una mayor cantidad de veces de llamadas
-durante el día, dado que son las variables más influyentes, y para
-contrarestar los gastos que esto puede significar, se podria reducir los
-planes internacionales y de voz dado que son de menor uso.</p>
-</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="index_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the
+code chunk to prevent printing of the R code that generated the
+plot.</p>
 </div>
 
 

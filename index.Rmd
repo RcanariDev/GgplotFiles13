@@ -15,112 +15,26 @@ output:
     toc_float: true
 ---
 
-```{r global_options, include=FALSE}
-knitr::opts_chunk$set(warning=FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<!-- # Content  -->
+## R Markdown
 
-<!-- 1. Brief Introduction -->
-<!-- 2. Data Sources -->
-<!-- 3. Technologies Used -->
-<!-- 4. Data Transformation -->
-<!--     + Main Libraries -->
-<!--     + Graduate Employment Dataset -->
-<!--     + Visualizations Part 1 -->
-<!--     + Graduates by institutions -->
-<!--     + Visualizations Part 2 -->
-<!-- 5. Shiny Application -->
-<!-- 6. Deployment -->
-<!-- 7. References -->
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-
-
-\
-
-## 1. Introducción
-
->Sarah A., nueva integrante del equipo de **Cell2Cell**, con estudios en estadística, tiene como misión elaborar un modelo estadístico para predecir la rotación de clientes, utilizar el modelo para identificar los generadores más importantes de rotación y con estos nuevos conocimientos recomendar un programa de gestión de clientes al Grupo de Gestión de Base de Clientes.
-
-
-<!-- ##### **How to see information on the website:** -->
-
-<!-- <img src="www/howto.gif" width="100%"/> -->
-
-
-## 2. Variables en estudio
-
-De la base de datos, se tiene la siguientes variables bajo estudio:
-
-```{r}
-Data1 <- read.csv("Cell2CellBase.csv")
-summary(Data1)
+```{r cars}
+summary(cars)
 ```
 
+## Including Plots
 
-## 3. Preguntas
+You can also embed plots, for example:
 
-### Pregunta 1
-
-> ¿Cuál es la problemática que enfrenta la compañia **Cell2Cell**?
-
-
-* La problemática a la que se enfrenta es la __Rotación voluntaria__ de clientes, es decir, aquella deserción de clientes de la empresa realizada por alguna buena razón.
-\
-\
-
-Deacuerdo a la base de datos, tenemos que:
-\
-
-De un total de 3'333 clientes registrados en la base de datos, 14% (483) han desertado, mientras que el 88% (2'850) continúa utilizando el servicio.
-
-```{r error = F, warning = F, message = F}
-library(dplyr)
-library(highcharter)
-
-read.csv("Cell2CellBase.csv") %>%
-  mutate(Resultado = case_when(
-    Churn == FALSE ~ "Se mantiene",
-    TRUE ~ "Desertó"
-  )) %>% 
-  group_by(Resultado) %>%
-  summarise(Total = n()) %>% 
-  ungroup() %>% 
-  mutate(Porcentaje = round(Total/sum(Total)*100, 0)) %>% 
-  mutate(Etiqueta = paste0(Resultado, " (", Porcentaje, "%)")) %>% 
-  hchart(., 'pie', hcaes(x = Etiqueta, y = Total), name = "Total",
-         tooltip = list(valueDecimals = 0, valuePrefix = "", valueSuffix = " Casos")
-         ) %>% 
-  hc_title(text = "Total de Casos según Estado del Cliente") %>% 
-  hc_colors(c("#1f3729", "#149c44")) %>%
-  hc_credits(
-    enabled = TRUE, text = "Fuente: Cell2Cell",
-    style = list(fontSize = "10px")
-  )
-
+```{r pressure, echo=FALSE}
+plot(pressure)
 ```
 
-### Pregunta 2
-
-> ¿Cuál es la manera actual de lidiar con ese problema? ¿Qué ventajas tiene en el corto plazo? ¿Qué desventajas tiene en el largo plazo?
-
-
-* Existen diversas alternativas para abordar esta problemática, entre ellas los **Programas de Retención Reactiva** o **Preventiva**. Así como la elaboración de **modelos predictivos** para la asignación adecuada de los servicios a ciertos clientes en base a determinadas características, en razón de reducir el riesgo de deserción de antemano.\
-Si bien es cierto, el Programa de Retención Reactiva, a corto plazo, resultado ser muy útil dado que el cliente continua utilizando el servicio, pero a largo plazo ya no, pues el cliente lo ve como una especie de último recurso por parte de la empresa y puede empezar a realziarlo frecuentemente y dejar de lado los términos iniciales del servicio brindado.
-Con respecto, al modelo predictivo, tiene ventaja en el corto plazo, debido a que de ante mano puedes conocer la capacidad de cumplir con el servicio. Quizas la desventaja a largo plazo del modelo prodectivo sea la adquisición de las personas encargada del modelo, así como la constante evaluación y mejora que el modelo requiere.\
-Pero tomando todo lo anterior mencionado en consideración, lo mejor sería optar por el modelo predictivo.
-\
-\
-
-### Pregunta 3 {.tabset}
-
-> Usted es el personaje Sara, ¿Cuál sería su plan de acción para afrontar el problema?
-
-
-De acuerdo al análisis descriptivo y predictivo realizado anteriormente, se concluye que tal vez pueda dar beneficios a aquellos clientes que tienen de 3 a 5 años de uso del servicio, dado que es donde hay mayor cantidad de fuga de clientes, además de tal vez premiar la fidelidad a la compañía con una mayor cantidad de veces de llamadas durante el día, dado que son las variables más influyentes, y para contrarestar los gastos que esto puede significar, se podria reducir los planes internacionales y de voz dado que son de menor uso.
-
-
-
-
-
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
