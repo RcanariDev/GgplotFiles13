@@ -1,5 +1,5 @@
 ---
-title: "Caso Estudio: Juego de la Rotación"
+title: "Ejemplos de ggplot"
 author: "Josemanuel Cañari"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 
@@ -11,30 +11,193 @@ output:
     #css: styles.css
     number_sections: false
     fig_caption: true
-    #toc: true
+    toc: true
     toc_float: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, size = "normalsize", fig.width=6, fig.height=4)
 ```
 
-## R Markdown
+# Histograma
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Modelos de Ejemplos de ggplot.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Librerias:
 
-```{r cars}
-summary(cars)
+<!-- message=FALSE: Es para correr el código pero no mostrar el mensaje -->
+
+```{r message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(gt)
+```
+Data a utilizar para histograma:
+
+<!-- echo=FALSE: es para mostrar el resultado solamente y no el código -->
+
+```{r message=FALSE}
+iris %>% 
+  select(Sepal.Length) %>% 
+  filter(row_number()<=5) %>% 
+  gt()
 ```
 
-## Including Plots
+&nbsp;
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+- Gráfico simple:
+Simplemente utilizando **ggplot()** y **geom_histogram()**
+  
+```{r, message=FALSE}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(data = .,
+         mapping = aes(x = Sepal.Length)
+         ) + 
+  geom_histogram()
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+&nbsp;
+
+- Establecer el número de columnas que se quiere
+
+Dentro de *geom_histogram()*, usando **bins**
+
+```{r, message=FALSE}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(data = .,
+         mapping = aes(x = Sepal.Length)
+  ) + 
+  geom_histogram(
+    bins = 10
+  )
+```
+
+&nbsp;
+
+- Establecer el número de columnas, mediante el criterio de Sturges
+
+Dentro de *geom_histogram()*, usando **breaks** yla función  **pretty**
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(
+    data = .,
+    mapping = aes(x = Sepal.Length)
+  ) +
+  geom_histogram(
+    breaks = pretty(x = range(iris %>% select(Sepal.Length)), 
+                    n = nclass.Sturges(iris %>% select(Sepal.Length) %>% pull()), 
+                    min.n = 1) #Se necesita pull() 
+  )
+
+```
+
+&nbsp;
+
+- Agregar relleno y borde: 
+
+Dentro de *geom_hist()*, usando **fill** y **color**
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(
+    data = .,
+    mapping = aes(x = Sepal.Length)
+  ) +
+  geom_histogram(
+    color = "red",
+    fill = "white"
+  )
+```
+
+&nbsp;
+
+- Agregar etiquetas: 
+
+Dentro de *labs()*, usando: **title**, **x** e **y**
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(
+    data = .,
+    mapping = aes(x = Sepal.Length)
+  ) +
+  geom_histogram(
+    color = "red",
+    fill = "white"
+  ) +
+  labs(
+    title = "Histograma",
+    x = "Titulo eje X",
+    y = "Titulo eje Y"
+  )
+```
+
+&nbsp;
+
+- Agregar limites a los ejes: 
+
+Dentro de *xlim()* y *ylim()*
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(
+    data = .,
+    mapping = aes(x = Sepal.Length)
+  ) +
+  geom_histogram(
+    color = "red",
+    fill = "white"
+  ) +
+  labs(
+    title = "Histograma",
+    x = "Titulo eje X",
+    y = "Titulo eje Y"
+  ) +
+  xlim(0, 10) +
+  ylim(0, 50)
+```
+
+
+
+&nbsp;
+
+- Agregar el gráfico de densidad: 
+
+Se debe agregar el **mapping** a *geom_histogram()* y agregar de *geom_density*
+
+```{r}
+iris %>% 
+  select(Sepal.Length) %>% 
+  ggplot(
+    data = .,
+    mapping = aes(x = Sepal.Length)
+  ) +
+  geom_histogram(
+    mapping = aes(y = ..density..),
+    color = "red",
+    fill = "white"
+  ) +
+  geom_density(
+   color = "#000000", fill = "#F85700", alpha = 0.5
+   ) +
+  labs(
+    title = "Histograma",
+    x = "Titulo eje X",
+    y = "Titulo eje Y"
+  )
+```
+
+# Gráfico de Barras
+
+# Gráfico de Columnas
+
+```{r}
+```
